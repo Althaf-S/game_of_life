@@ -1,8 +1,19 @@
 import gameoflife
-import numpy as np
 
-def test_show_grid_in_terminal():
-  row_size = 3
-  column_size = 3
-  my_array = gameoflife.show_grid_in_terminal(row_size,column_size)
-  assert my_array == "* * *\n* * *\n* * *"
+def test_none_alive():
+  alive = [6,6]
+  size = [3,4]
+  my_array = gameoflife.display_grid(size,alive)
+  assert my_array == "* * * * * * * * * * * *"
+  
+def test_one_alive():
+  alive = [2,1]
+  size = [3,4]
+  my_array = gameoflife.display_grid(size,alive)
+  assert my_array == "* * * * * * * * * A * *"
+  
+def test_more_than_one_alive():
+  alive = [(2,1),(1,1)]
+  size = [3,4]
+  my_array = gameoflife.display_grid(size,alive)
+  assert my_array == "* * * * * A * * * A * *"
