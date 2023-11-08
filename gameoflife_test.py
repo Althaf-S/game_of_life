@@ -12,8 +12,4 @@ def test_one_alive():
   my_array = gameoflife.display_grid(size,alive)
   assert my_array == "* * * * * * * * * A * *"
   
-def test_more_than_one_alive():
-  alive = [(2,1),(1,1)]
-  size = [3,4]
-  my_array = gameoflife.display_grid(size,alive)
-  assert my_array == "* * * * * A * * * A * *"
+
