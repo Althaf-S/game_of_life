@@ -32,7 +32,17 @@ def update_grid(grid):
                     new_grid[i][j] = 1
     return new_grid
 
+def game_of_life(rows, cols, generations):
+    grid = initialize_grid(rows, cols)
+    for _ in range(generations):
+        print_grid(grid)
+        grid = update_grid(grid)
+        time.sleep(0.5)
 
+if __name__ == "__main__":
+    rows, cols = 20, 30
+    generations = 10
+    game_of_life(rows, cols, generations)
 
 
 
