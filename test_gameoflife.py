@@ -23,4 +23,16 @@ def test_count_neighbors():
   assert gameoflife.count_neighbors(grid, 0, 1) == 2
   assert gameoflife.count_neighbors(grid, 2, 2) == 1
 
+def test_update_grid():
+
+  grid = [[0, 1, 0],
+          [0, 1, 0],
+          [0, 1, 0]]
+
+  new_grid = gameoflife.update_grid(grid)
+
+  expected_new_grid = [[0, 0, 0],
+                       [1, 1, 1],
+                       [0, 0, 0]]
+  assert new_grid == expected_new_grid
 
