@@ -13,5 +13,14 @@ def test_initialize_grid():
     for cell in row:
       assert cell in [0, 1]
 
+def test_count_neighbors():
+
+  grid = [[1, 0, 0],
+          [0, 1, 0],
+          [0, 0, 0]]
+
+  assert gameoflife.count_neighbors(grid, 0, 0) == 1
+  assert gameoflife.count_neighbors(grid, 0, 1) == 2
+  assert gameoflife.count_neighbors(grid, 2, 2) == 1
 
 
