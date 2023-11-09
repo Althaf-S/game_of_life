@@ -3,7 +3,7 @@ import copy
 import time
 
 def initialize_grid(rows, cols):
-    return [[random.choice([0, 1]) for _ in range(cols)] for _ in range(rows)]
+    return [[random.choice([0, 1]) for i in range(cols)] for j in range(rows)]
 
 def print_grid(grid):
     for row in grid:
@@ -20,7 +20,7 @@ def count_neighbors(grid, x, y):
             count += grid[i][j]
     return count
 def update_grid(grid):
-    new_grid = copy.deepcopy(grid)
+    new_grid =  copy.deepcopy(grid)
     rows, cols = len(grid), len(grid[0])
     for i in range(rows):
         for j in range(cols):
@@ -38,11 +38,12 @@ def game_of_life(rows, cols, generations):
     for _ in range(generations):
         print_grid(grid)
         grid = update_grid(grid)
-        time.sleep(0.5)
+        time.sleep(0.7)
 
 if __name__ == "__main__":
-    rows, cols = 20, 30
-    generations = 10
+    rows = int(input("Enter the number of rows: "))
+    cols = int(input("Enter the number of columns: "))
+    generations = int(input("No. of generations : "))
     game_of_life(rows, cols, generations)
 
 
